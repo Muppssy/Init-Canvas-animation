@@ -77,7 +77,7 @@
 ### 7 Fonction Init (Parti du code qui effacer permet de comprendre comment les particules bouges, l'animation des particules)
 
 - la fonction Init est utilisée pour afficher nos particules dans le DOM. le code si aprés sera remplacé.
-- ![Affichage des particles](img/carbon.png "affichage particule, Particle Canvas").
+  ![Affichage des particles](img/carbon.png "affichage particule, Particle Canvas").
 
 - aprés a voir créer la fonction Init: on créer le tableau vide \*particleArray = []\*
 - puis on lui passe la method **push()** qui prendra tous ce qu'on lui passera et le positionnera à la fin du \*tableau. Dans la méthode en lui passe en paramètre _new Particle()_ _qui prends les coordonnée X et Y._
@@ -93,36 +93,38 @@
 
 ### 9 Affichage des particules
 
-- ![Affichage des particles v2](<img/carbon(1).png> "affichage particule, Particle Canvas").
+- ![Affichage des particles](<img/code1.png> "affichage particule,      Particle Canvas").
 
-- dans ce code on affiche les particules en dure pour pouvoir en afficher en grand nombre et aléatoirement on va créér un **variable x et y** et afficher un nombre random de particules multiplié par le nombre de particules voulu * par la hauteur et la largeur de notre canvas,  puis passe dans nottre *new Particle(x, y)* les paramètre X et Y.
+- dans ce code on affiche les particules en dure pour pouvoir en afficher en grand nombre et aléatoirement on va créér un **variable x et y** et afficher un nombre random de particules multiplié par le nombre de particules voulu * par la hauteur et la largeur de notre canvas, puis passe dans nottre *new Particle(x, y)\* les paramètre X et Y.
 
-- ![Affichage des particles v2](<img/carbon(2).png> "affichage particule, Particle Canvas").
+- ![Affichage des particles v2](code2.png> "affichage particule, Particle Canvas").
 
+### 10 Update des particules
 
-### 10 Update des particules 
-
-- On va creer une méthode *update* qui consiste à calculer la distance entre la position actuelle de la souris et la position actuelle des particules.
+- On va creer une méthode _update_ qui consiste à calculer la distance entre la position actuelle de la souris et la position actuelle des particules.
 
 ## Calcule la distance entre deux points
-- on va calculer la distance entre deux point sur l'axe X. 
-  on crée une variable *dx* et on lui passe la posX de la souris *mouse.x* moins la positionx initiale de la particule *this.x*.
-  *let dx = mouse.x - this.x*
 
-  - ex: si la pos x de la souris et a *50* et la positionx de la  particules et de *30* alors dx = *20*. *this.y et this.x représente la position des particules* on fais la même chose pour Y: *let dy = mouse.y - this.y*.
+- on va calculer la distance entre deux point sur l'axe X.
+  on crée une variable _dx_ et on lui passe la posX de la souris _mouse.x_ moins la positionx initiale de la particule _this.x_.
+  _let dx = mouse.x - this.x_
+
+  - ex: si la pos x de la souris et a _50_ et la positionx de la particules et de _30_ alors dx = _20_. _this.y et this.x représente la position des particules_ on fais la même chose pour Y: _let dy = mouse.y - this.y_.
 
   - maintenant que nous connaissons la distance X et Y des particule par rapport a la position X et Y de la souris, nous venons de créer un angle droit entre la souris et la particules.
-  nous avons donc un *coté adjacent dx et un coté opposée dy* pour connaitre l'hypoténus.
+    nous avons donc un _coté adjacent dx et un coté opposée dy_ pour connaitre l'hypoténus.
 
-  - pour calculer la distance on créer un variable distance qui sera égale *distX * distX + distY * distY*.
-  *let distance = Math.sqrt(dx x dx + dy x dy)*.
+  - pour calculer la distance on créer un variable distance qui sera égale _distX _ distX + distY _ distY_.
+    _let distance = Math.sqrt(dx x dx + dy x dy)_.
 
   nous avons maintenant:
-  - ![Affichage des particles v2](<img/carbon(3).png> "affichage particule, Particle Canvas").
 
-- on dis que si la distance "*hypothénus*" et inferieur a 500, la position initiale de nos particules *this.size* est égale a 50 sinon sa position initiale reste a 3,  pour finir on rappel notre tableau *particleArray[i].update* dans notre fonction animate.
+  - ![Affichage des particles v2](code3.png> "affichage particule, Particle Canvas").
+
+- on dis que si la distance "_hypothénus_" et inferieur a 500, la position initiale de nos particules _this.size_ est égale a 50 sinon sa position initiale reste a 3, pour finir on rappel notre tableau _particleArray[i].update_ dans notre fonction animate.
 
 ### 11 Dispertion des particules
+
 - Maintenant que les particules sont suffisamment proche de la souris, on veut quel commence a s'éloigner. les particules vont ce déplacer du centre du cercle ver le bord, elle déplaceront à vitesse differentes en fonction de leurs poids. on veut aussi que les particules se déplace rapidement si elle sont proche de la souris mais qu'elles ralentissent progressivement à mesure qu'elles se rapproche de zonne d'extraction.
 
-  1 . on créer un variable *forceDirectionX* qui se ra egale *dx* divisé par la *distance* on fais de même pour la *forceDirectionY* 
+  1 . on créer un variable _forceDirectionX_ qui se ra egale _dx_ divisé par la _distance_ on fais de même pour la _forceDirectionY_
