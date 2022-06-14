@@ -97,7 +97,7 @@
 
 - dans ce code on affiche les particules en dure pour pouvoir en afficher en grand nombre et aléatoirement on va créér un **variable x et y** et afficher un nombre random de particules multiplié par le nombre de particules voulu * par la hauteur et la largeur de notre canvas, puis passe dans nottre *new Particle(x, y)\* les paramètre X et Y.
 
-- ![Affichage des particles v2](code2.png> "affichage particule, Particle Canvas").
+- ![Affichage des particles v2](code2.png" affichage particule, Particle Canvas").
 
 ### 10 Update des particules
 
