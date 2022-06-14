@@ -13,7 +13,7 @@ let adjustY = 5;
 let mouse = {
   x: null,
   y: null,
-  radius: 150,
+  radius: 100,
 };
 
 window.addEventListener("mousemove", function (event) {
@@ -108,9 +108,6 @@ function connect() {
   let opacityValue = 1;
   for (let a = 0; a < particleArray.length; a++) {
     for (let b = a; b < particleArray.length; b++) {
-      // let dx = mouse.x - this.x;
-      // let dy = mouse.y - this.y;
-      // let distance = Math.sqrt(dx * dx + dy * dy);
       let dx = particleArray[a].x - particleArray[b].x;
       let dy = particleArray[a].y - particleArray[b].y;
       let distance = Math.sqrt(dx * dx + dy * dy);
@@ -127,4 +124,3 @@ function connect() {
     }
   }
 }
-
