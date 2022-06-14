@@ -74,7 +74,7 @@
 4.  ctx.closePath(): permet la fermeture de notre forme.
 5.  ctx.fill(): Remplis le chemin de notre tracée.
 
-### 7 Fonction Init (Parti du code qui effacer permet de comprendre comment les particules bouges, l'animation des particules)
+### 7 Fonction Init (Parti du code qui sera effacer, permet de comprendre comment les particules bouges avec de la physique basique(dispersion, etc...), l'animation des particules)
 
 - la fonction Init est utilisée pour afficher nos particules dans le DOM. le code si aprés sera remplacé.
   ![Affichage des particles](img/carbon.png "affichage particule, Particle Canvas").
