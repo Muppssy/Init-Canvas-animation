@@ -123,11 +123,7 @@ on utilise la methode **window.requestAnimationframe()** qui permet de notifie a
 
 #### 12 Dispertion des particules
 
-- Maintenant que les particules sont suffisamment proche de la souris, on veut quel   
-commence a s'éloigner. Les particules vont ce déplacer du centre du cercle vers le   
-bord, elle se déplaceront à vitesse differentes en fonction de leurs poids.  
- on veut aussi que les particules se déplace rapidement si elle sont proche de la souris mais   
-qu'elles ralentissent progressivement à mesure qu'elles se rapproche de leurs point d'origine.  
+- Maintenant que les particules sont suffisamment proche de la souris, on veut quel   commence a s'éloigner. Les particules vont ce déplacer du centre du cercle vers le bord, elle se déplaceront à vitesse differentes en fonction de leurs poids. On veut aussi que les particules se déplace rapidement si elle sont proche de la souris mais qu'elles ralentissent progressivement à mesure qu'elles se rapproche de leurs point d'origine.  
 
 
   1. on créer un variable _forceDirectionX_ qui se ra egale _dx_ divisé par la _distance_ on fais de même pour la _forceDirectionY_.  
@@ -138,3 +134,26 @@ qu'elles ralentissent progressivement à mesure qu'elles se rapproche de leurs p
  **let maxDistance = mouse.radius**
 
   4. On creer la variable *force* qui sera egale à la distance max du radius de la souris - moins la distance (*Operation pour calculer l'hypoténus*) divisé par la max distance.
+  *La variable let force: est la force avec laquel les particules se disperse en touchant les bords exterieure de la souris.
+
+  ex: maxdistance = 100
+      distance = 20
+      (100- 20) / 100
+      80 / 100 = 0.8
+  
+  *voir d'autre explication*
+
+
+  5. On créer les variables *DirectionX - DirectionY* qui est la vitesse de déplacement des particules sur un axe X et Y, qui est égale à la force de direction * force * densité des particule
+
+  6. Dans la condition on dis que , si la distance et plus grande que le radius de la souris alors la position initiale des particules et soustraite a direction
+
+  7. la suite de la condition et d'initialiser les position des particules et lorsque la souris et retiré reviennent a leur position initiale. 
+
+
+#### 13 Scanne des particules sur une lettre
+
+- ![Scanne des particules](img/code5.png" affichage particule, Particle Canvas").
+
+
+1. Dans cette fonction
